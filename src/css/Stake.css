@@ -10,7 +10,7 @@
   }
   
   .spacerForStakeSection {
-    padding-top: 20px;
+    padding-top: 175px;
   }
   
   .insideCardForStake {
@@ -66,4 +66,23 @@
   .unstakeButtonDiv {
     margin: 30px;
     display: inline;
+  }
+
+
+  .timeUntilUnlockDiv {
+    text-align: left;
+    margin: 10px;
+    padding-left: 75px;
+  }
+  
+  .stakeStartDateDiv {
+    text-align: left;
+    margin: 10px;
+    padding-left: 75px;
+  }
+  
+  .unlockDateDiv {
+    text-align: left;
+    margin: 10px;
+    padding-left: 75px;
   }

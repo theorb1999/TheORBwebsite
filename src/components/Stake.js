@@ -64,7 +64,7 @@ class Stake extends Component {
 
                         <div className="amountToStakeDiv">
                             <label className="labelsForORBtoStakeAmount" >ORB to Stake:  </label>
-                            <InputNumber id="inputBNBamountID" onChange={updateAmountsORBtoStake} />
+                            <InputNumber id="inputBNBamountID" placeholder="1 ORB Minimum" onChange={updateAmountsORBtoStake} />
                         </div>
 
                         <div className="spacerForCardBuyPresaleSection"></div>
@@ -86,18 +86,18 @@ class Stake extends Component {
                         <div className="spacerForCardBuyPresaleSection"></div>
 
                         <div className="timeUntilUnlockDiv">
-                            <label className="labelsForAmountStaked" >Unlock Date: </label>
-                            <label className="labelsForAmountStaked" id="amountORBwallet" >3</label>
+                            <label className="labelsForAmountStaked" >Time Until Unlock: </label>
+                            <label className="labelsForAmountStaked" id="timeUntilUnlockID" >3</label>
                         </div>
 
                         <div className="stakeStartDateDiv">
                             <label className="labelsForAmountStaked" >Stake Start Date: </label>
-                            <label className="labelsForAmountStaked" id="amountORBwallet" >3</label>
+                            <label className="labelsForAmountStaked" id="stakeStartDateID" >3</label>
                         </div>
 
                         <div className="unlockDateDiv">
                             <label className="labelsForAmountStaked" >Unlock Date: </label>
-                            <label className="labelsForAmountStaked" id="amountORBwallet" >3</label>
+                            <label className="labelsForAmountStaked" id="unlockTimeDateID" >3</label>
                         </div>
 
 
