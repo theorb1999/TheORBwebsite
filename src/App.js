@@ -20,7 +20,7 @@ import BuyPresale from './BuyPresale';
 import Stake from './Stake';
 
 
-import backgroundImg from './images/background.jpg';
+//import backgroundImg from './images/backgroundImageCompressed.jpg';
 
 
 
@@ -54,14 +54,316 @@ class App extends Component {
                 <div className="App" >
 
                     <div class="backgroundImgSection">
-                        <img src={backgroundImg} alt="Welcome to The ORB!" class="stretchBackgroundImage" />
-
+                        
+                        <div class="stars">
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+        <div class="container">
+          <div class="star"></div>
+        </div>
+      </div>
                     </div>
 
                     <div className="topNavMenu" >
                         <TabMenu model={this.itemsForTabMenu} activeItem={this.itemsForTabMenu[0]} style={{ textAlign: 'right' }} />
                     </div>
 
+                    
 
                     <Home />
 

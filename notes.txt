@@ -25,11 +25,8 @@ So you can see how it works, calling the file starts a stack, it must resolve th
 
 
 <div className="topNavMenu" >
-
-                        <TabMenu model={this.itemsForTabMenu} style={{textAlign: 'right'}} />
-                        
-                        
-                    </div>
+    <TabMenu model={this.itemsForTabMenu} style={{textAlign: 'right'}} />
+</div>
 
 
 

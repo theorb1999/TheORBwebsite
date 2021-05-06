@@ -17,8 +17,8 @@
 
 .topNavMenu {
   position: fixed;
-
-  right: 0; 
+  left:20%;
+  /*right: 0; */
   /* left: 0; */
 
 
@@ -28,7 +28,16 @@
 
 
 
-
+#orbimg{
+  width:1000px;
+  height:500px;
+  background-image:url('https://i.imgur.com/OK0SKop.png');
+  left:60%;
+  top:30%;
+  position:fixed;
+  background-repeat:no-repeat;
+  z-index:-1000;
+}
 
 .backgroundImgSection{
     /* width: 100%;  */
@@ -44,6 +53,7 @@
 
     top: 0px; 
     z-index: -1; /* Ensure div tag stays behind content; -999 might work, too. */
+    
 }
 
 
@@ -67,14 +77,32 @@
 
 
 .spacerForHomesection {
-  padding-top:200px;
+  padding-top:17%;
 }
 
+.orbHomeHeadline{
+  font-family: 'Monsterrat', sans-serif;
+  color:#ffa500;
+}
 
+.orbHomeText{
+  font-family: 'Quicksand', sans-serif;
+  color:white;
+  font-size:1.5em;
+  
+}
+.sentence{
+  margin-bottom:4%;    
+}
 
+.bolded{
+  font-weight:700;
+  color:#cb4db0;
+}
 .homeSection {
   margin-left: auto;
-  margin-right: 11%;
+  /*margin-right: 11%;*/
+  margin-right:45%;
 
   /* margin-left: 10%;
   margin-right: auto; */
@@ -82,8 +110,8 @@
   /* float: right; */
   padding-top: 100px;
   padding-bottom: 500px;
-  width: 30%;
-
+  width: 40%;
+  
 
 }
 
@@ -101,7 +129,7 @@
   text-align: center;
   font-weight: bold;
   font-size:xxx-large;
-  font-family: Futura; 
+  font-family: 'Quicksand', sans-serif; 
   color: white;
 }
 
@@ -115,10 +143,13 @@
 }
 
 
-
+.fontQS{
+  font-family: 'Quicksand', sans-serif!important;
+}
 .faqSection {
   margin-left: auto;
-  margin-right: 8%;
+  /*margin-right: 8%;*/
+  margin-right:45%;
 
   /* margin-left: 10%;
   margin-right: auto; */
@@ -127,6 +158,8 @@
   padding-top: 100px;
   padding-bottom: 500px;
   width: 40%;
+  font-family: 'Quicksand', sans-serif!important;
+  color:white;
 }
 
 .spacerForFAQsections {
@@ -143,15 +176,16 @@
 
 .buyPresaleSection {
   margin-left: auto;
-  margin-right: 20%;
+  /*margin-right: 20%;*/
+  margin-right:57%;
   /* float: right; */
-  padding-top: 100px;
+  padding-top: 80px;
   padding-bottom: 500px;
   width: 20%;
 }
 
 .spacerForBuyPresaleSection {
-  padding-top:200px;
+  padding-top:90px;
 }
 
 .insideCardForPresale {
@@ -164,14 +198,14 @@
 
 .presaleIsLiveHeader {
   font-weight: bold;
-  font-size: xxx-large;
-  font-family: Futura; 
+  font-size: 32px;
+  font-family: 'Quicksand', sans-serif; 
 }
 
 .presaleRate {
   font-weight: bold;
-  font-size:x-large;
-  font-family: Futura; 
+  font-size:18px;
+  font-family: 'Quicksand', sans-serif; 
   color: gold;
 }
 
@@ -206,7 +240,8 @@
 
 .stakeSection {
   margin-left: auto;
-  margin-right: 15%;
+  /*margin-right: 15%;*/
+  margin-right:50%;
   /* float: right; */
   padding-top: 100px;
   padding-bottom: 500px;
@@ -215,7 +250,7 @@
 
 
 .spacerForStakeSection {
-  padding-top:200px;
+  padding-top:20px;
 }
 
 .insideCardForStake {
@@ -225,23 +260,23 @@
 
 .stakingIsLiveHeader{
   font-weight: bold;
-  font-size: xxx-large;
-  font-family: Futura; 
+  font-size: 32px;
+  font-family: 'Quicksand', sans-serif; 
 }
 
 
 .labelsForAmountStaked{
   font-weight: bold;
-  font-size:x-large;
-  font-family: Futura; 
+  font-size:18px;
+  font-family: 'Quicksand', sans-serif; 
 
 }
 
 .apyAmountHeader{
   color:gold;
   font-weight: bold;
-  font-size: xx-large;
-  font-family: Futura; 
+  font-size: 28px;
+  font-family: 'Quicksand', sans-serif; 
 }
 
 .orbStakedDiv {
@@ -279,3 +314,153 @@
 }
 
 
+/*FancyButtonStuff*/
+.buttonsDiv{
+  margin-top:-6%;
+  margin-left:-1%;
+}
+
+.buttonContainer{
+	margin-top:100px;
+	text-align:center;
+}
+
+h4{
+	color:rgba(69, 69, 69, 1);
+  display:inline-block;
+	/*line-height:2em;*/
+}
+
+/* BUTTON CSS
+------------------------------------------- */
+
+a.fancyButton{
+  display:inline-block;
+	
+	/*font:normal normal 300 1.3em 'Open Sans';*/
+  font-size:0.8em;
+	text-decoration:none;	
+	
+	color:#ffa500;
+	background-color:transparent;
+	border:1px solid #ffa500;
+	border-radius:100px;
+	
+	padding: .3em 1.2em;
+	margin:5px;
+			
+	background-size: 200% 100%;	
+	background-image: linear-gradient(to right, transparent 50%, #ffa500 50%);
+	transition: background-position .3s cubic-bezier(0.19, 1, 0.22, 1) .1s, color .5s ease 0s, background-color .5s ease;
+}
+
+a.fancyButton:hover{
+	color:rgba(255, 255, 255, 1);
+	background-color:#ffa500;
+	background-position: -100% 100%;
+}
+
+
+a.fancyButton2{
+  display:inline-block;
+	
+	/*font:normal normal 300 1.3em 'Open Sans';*/
+  font-size:0.8em;
+	text-decoration:none;	
+	
+	color:rgba(28, 190, 131, 1);
+	background-color:transparent;
+	border:1px solid rgba(28, 190, 131, 1);
+	border-radius:100px;
+	
+	padding: .3em 1.2em;
+	margin:5px;
+			
+	background-size: 200% 100%;	
+	background-image: linear-gradient(to right, transparent 50%, rgba(28, 190, 131, 1) 50%);
+	transition: background-position .3s cubic-bezier(0.19, 1, 0.22, 1) .1s, color .5s ease 0s, background-color .5s ease;
+}
+
+a.fancyButton2:hover{
+	color:rgba(255, 255, 255, 1);
+	background-color:rgba(28, 190, 131, 1);
+	background-position: -100% 100%;
+}
+
+
+/*NewFAQ*/
+
+.faq-header{
+  font-size: 32px;
+  border-bottom: 1px dotted #ccc;
+  padding: 24px;
+}
+
+.faq-content {
+  margin: 0 auto;
+}
+
+.faq-question {
+  padding: 20px 0;
+  border-bottom: 1px dotted #ccc;
+}
+
+.panel-title {
+  font-size: 24px;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 10px 10px 0 48px;
+  display: block;
+  cursor: pointer;
+}
+
+.panel-content {
+  font-size: 20px;
+  padding: 0px 14px;
+  margin: 0 40px;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  position: relative;
+  opacity: 0;
+  -webkit-transition: .4s ease;
+  -moz-transition: .4s ease;
+  -o-transition: .4s ease;
+  transition: .4s ease;
+}
+
+.panel:checked ~ .panel-content{
+  height: auto;
+  opacity: 1;
+  padding: 14px;
+}
+
+.plus {
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 4px;
+  z-index: 5;
+  font-size: 42px;
+  line-height: 100%;
+  -webkit-user-select: none;    
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-transition: .2s ease;
+  -moz-transition: .2s ease;
+  -o-transition: .2s ease;
+  transition: .2s ease;
+}
+
+.panel:checked ~ .plus {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.panel {
+  display: none;
+}
