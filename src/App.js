@@ -1,27 +1,41 @@
 import React, { Component } from 'react';
 import './App.css';
+
+// Prime React
 import 'primereact/resources/themes/mdc-dark-indigo/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
+
+
+// Prime React Components
 import { Sidebar } from 'primereact/sidebar';
 import { Menu } from 'primereact/menu';
 import { TabMenu } from 'primereact/tabmenu';
 import { Fieldset } from 'primereact/fieldset';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
+
+// Router
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Sections
-import Home from './Home';
-import FAQ from './FAQ';
-import OrbImage from './OrbImage';
-import BuyPancakeSwap from './BuyPancakeSwap';
-import BuyPresale from './BuyPresale';
-import Stake from './Stake';
+import Home from './components/Home';
+import './css/Home.css';
+import Stars from './components/Stars';
+import './css/Stars.css';
+import FAQ from './components/FAQ';
+import './css/FAQ.css';
+import OrbImage from './components/OrbImage';
+import './css/OrbImage.css';
+import BuyPancakeSwap from './components/BuyPancakeSwap';
+import './css/BuyPancakeSwap.css';
+import BuyPresale from './components/BuyPresale';
+import './css/BuyPresale.css';
+import Stake from './components/Stake';
+import './css/Stake.css';
 
 
 //import backgroundImg from './images/backgroundImageCompressed.jpg';
-
 
 
 console.log("called App");
@@ -29,374 +43,60 @@ console.log("called App");
 
 class App extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.itemsForTabMenu = [
+      { label: 'Home', icon: 'pi pi-home', command: () => { window.location = "#home" } },
+      { label: 'FAQ', icon: 'pi pi-question-circle', command: () => { window.location = "#faq" } },
+      { label: 'Buy', icon: 'pi pi-money-bill', command: () => { window.location = "#buy" } },
+      { label: 'Stake and Farm', icon: 'pi pi-dollar', command: () => { window.location = "#stake" } },
+      { label: 'The Team', icon: 'pi pi-id-card', command: () => { window.location = "#team" } },
+      { label: 'Socials', icon: 'pi pi-discord', command: () => { window.location = "#socials" } }
+    ];
+
+    // window.location = "/home"
+    window.location = "#home"
+  }
 
 
-    constructor(props) {
-        super(props);
-        this.itemsForTabMenu = [
-            { label: 'Home', icon: 'pi pi-home', command: () => { window.location = "/#home" } },
-            { label: 'FAQ', icon: 'pi pi-question-circle', command: () => { window.location = "/#faq" } },
-            { label: 'Buy', icon: 'pi pi-money-bill', command: () => { window.location = "/#buy" } },
-            { label: 'Stake and Farm', icon: 'pi pi-dollar', command: () => { window.location = "/#stake" } },
-            { label: 'The Team', icon: 'pi pi-id-card', command: () => { window.location = "/#team" } },
-            { label: 'Socials', icon: 'pi pi-discord', command: () => { window.location = "/#socials" } }
-        ];
+  render() {
+    return (
+      <Router>
+        <div className="App" >
 
-        window.location = "/#faq"
+          <TabMenu className="topNavMenu" model={this.itemsForTabMenu} activeItem={this.itemsForTabMenu[0]} style={{ }} />
 
-    }
+          <Stars />
 
+          <Home />
 
+          <Stars />
 
-    render() {
-        return (
-            <Router>
-                <div className="App" >
+          <FAQ />
 
-                    <div class="backgroundImgSection">
-                        
-                        <div class="stars">
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-        <div class="container">
-          <div class="star"></div>
-        </div>
-      </div>
-                    </div>
+          <Stars />
 
-                    <div className="topNavMenu" >
-                        <TabMenu model={this.itemsForTabMenu} activeItem={this.itemsForTabMenu[0]} style={{ textAlign: 'right' }} />
-                    </div>
+          <BuyPresale />
 
-                    
+          {/* <BuyPancakeSwap /> */}
 
-                    <Home />
+          <Stars />
 
-                    <FAQ />
+          <Stake />
 
-                    <BuyPresale />
-
-                    {/* <BuyPancakeSwap /> */}
-
-                    <Stake />
-
-                    
-
-=
-
-                    <div className="logoSection" id="whitepaper" >
-                    
-                    </div>
-
-                    <div className="logoSection" id="team" >
-                   
-                    </div>
-
-                    <div className="logoSection" id="socials" >
-                    
-                    </div>
+          <Stars />
 
 
 
-                </div>
-            </Router>
-        );
-    }
+
+
+        </div>
+      </Router>
+
+
+    );
+  }
 
 
 

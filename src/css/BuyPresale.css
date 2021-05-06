@@ -1,0 +1,35 @@
+
+.buyPresaleSection {
+    margin-left: auto;
+    /*margin-right: 20%;*/
+    margin-right: 57%;
+    /* float: right; */
+    padding-top: 80px;
+    padding-bottom: 500px;
+    width: 20%;
+  }
+  
+  .spacerForBuyPresaleSection {
+    padding-top: 90px;
+  }
+  
+  .insideCardForPresale {
+    text-align: center;
+  }
+  
+  .spacerForCardBuyPresaleSection {
+    padding-top: 20px;
+  }
+  
+  .presaleIsLiveHeader {
+    font-weight: bold;
+    font-size: 32px;
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  .presaleRate {
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Quicksand', sans-serif;
+    color: gold;
+  }
