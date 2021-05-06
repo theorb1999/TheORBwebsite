@@ -1,0 +1,51 @@
+
+
+
+start the react app
+npm start
+
+
+
+When you’re ready to deploy to production, running 
+npm run build
+will create an optimized build of your app in the build folder. 
+
+
+
+What gets called first is the Imports,
+
+index.js - first
+imports of index.js - second
+imports of imports - third
+
+
+So you can see how it works, calling the file starts a stack, it must resolve the imports code first.
+
+
+
+
+<div className="topNavMenu" >
+
+                        <TabMenu model={this.itemsForTabMenu} style={{textAlign: 'right'}} />
+                        
+                        
+                    </div>
+
+
+
+
+
+
+
+Using github
+cd to local folder
+git init
+
+add node_modules to .gitignore
+add any other folders you want git to ignore
+
+git config --global user.name theorb1999
+git config --global user.email theorb1999@protonmail.com
+
+
+git add .

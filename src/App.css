@@ -1,0 +1,281 @@
+
+.p-menu {
+  background-color: #557A95 !important;
+}
+.p-menuitem-icon{
+    color:#FFFFFF !important;
+}
+
+.p-menuitem-text{
+  color:#FFFFFF !important;
+}
+
+.p-menu .p-menuitem .p-menuitem-link:hover {
+  background-color: #5D5C61;
+}
+
+
+.topNavMenu {
+  position: fixed;
+
+  right: 0; 
+  /* left: 0; */
+
+
+
+  top: 0;
+}
+
+
+
+
+
+.backgroundImgSection{
+    /* width: 100%;  */
+    /* height: 100%;  */
+    position: fixed; 
+    /* position:absolute; */
+    /* position: relative; */
+    /* position: sticky; */
+
+
+    /* right: 0px;  */
+    left: 0px; 
+
+    top: 0px; 
+    z-index: -1; /* Ensure div tag stays behind content; -999 might work, too. */
+}
+
+
+
+
+
+
+.logoSection {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* float: right; */
+  padding-top: 100px;
+  padding-bottom: 500px;
+
+  /* width: 90%; */
+  width: 10%;
+
+
+}
+
+
+.spacerForHomesection {
+  padding-top:200px;
+}
+
+
+
+.homeSection {
+  margin-left: auto;
+  margin-right: 11%;
+
+  /* margin-left: 10%;
+  margin-right: auto; */
+
+  /* float: right; */
+  padding-top: 100px;
+  padding-bottom: 500px;
+  width: 30%;
+
+
+}
+
+
+.insideCardForHome {
+
+
+
+
+
+}
+
+
+.welcomeHeaderhome{
+  text-align: center;
+  font-weight: bold;
+  font-size:xxx-large;
+  font-family: Futura; 
+  color: white;
+}
+
+.welcomeTexthome {
+
+  color: white;
+
+
+
+
+}
+
+
+
+.faqSection {
+  margin-left: auto;
+  margin-right: 8%;
+
+  /* margin-left: 10%;
+  margin-right: auto; */
+
+  /* float: right; */
+  padding-top: 100px;
+  padding-bottom: 500px;
+  width: 40%;
+}
+
+.spacerForFAQsections {
+  padding-top: 25px;
+}
+
+
+
+
+
+
+
+
+
+.buyPresaleSection {
+  margin-left: auto;
+  margin-right: 20%;
+  /* float: right; */
+  padding-top: 100px;
+  padding-bottom: 500px;
+  width: 20%;
+}
+
+.spacerForBuyPresaleSection {
+  padding-top:200px;
+}
+
+.insideCardForPresale {
+  text-align: center;
+}
+
+.spacerForCardBuyPresaleSection {
+  padding-top:20px;
+}
+
+.presaleIsLiveHeader {
+  font-weight: bold;
+  font-size: xxx-large;
+  font-family: Futura; 
+}
+
+.presaleRate {
+  font-weight: bold;
+  font-size:x-large;
+  font-family: Futura; 
+  color: gold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.buyPancakeSwapSection {
+  margin-left: auto;
+  margin-right: 0%;
+  /* float: right; */
+  padding-top: 100px;
+  padding-bottom: 500px;
+  width: 40%;
+}
+
+.spacerForBuyPancakeSwapSection {
+  padding-top:200px;
+}
+
+
+
+
+
+
+.stakeSection {
+  margin-left: auto;
+  margin-right: 15%;
+  /* float: right; */
+  padding-top: 100px;
+  padding-bottom: 500px;
+  width: 30%;
+}
+
+
+.spacerForStakeSection {
+  padding-top:200px;
+}
+
+.insideCardForStake {
+  text-align: center;
+}
+
+
+.stakingIsLiveHeader{
+  font-weight: bold;
+  font-size: xxx-large;
+  font-family: Futura; 
+}
+
+
+.labelsForAmountStaked{
+  font-weight: bold;
+  font-size:x-large;
+  font-family: Futura; 
+
+}
+
+.apyAmountHeader{
+  color:gold;
+  font-weight: bold;
+  font-size: xx-large;
+  font-family: Futura; 
+}
+
+.orbStakedDiv {
+  text-align: left;
+  margin: 10px;
+  padding-left: 130px;
+}
+
+.orbOwnedDiv {
+  text-align: left;
+  margin: 10px;
+  padding-left: 130px;
+}
+
+.orbGeneratedDiv {
+  text-align: left;
+  margin: 10px;
+  padding-left: 130px;
+}
+
+
+.labelsForORBtoStakeAmount{
+  font-size:larger;
+}
+
+
+.stakeButtonDiv{
+  margin: 30px;
+  display:inline;
+}
+
+.unstakeButtonDiv{
+  margin: 30px;
+  display:inline;
+}
+
+
