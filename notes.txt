@@ -49,3 +49,15 @@ git config --global user.email theorb1999@protonmail.com
 
 
 git add .
+git status
+
+
+Create a completel github empty repo
+Make sure your GitHub repo was actually empty (no README.md)
+
+git remote remove https://github.com/theorb1999/orbwebsite.git
+
+git remote set-url origin https://github.com/theorb1999/TheORBwebsite.git
+
+
+Now use the UI to push it
