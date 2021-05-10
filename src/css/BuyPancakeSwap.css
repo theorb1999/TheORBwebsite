@@ -1,13 +1,14 @@
 .buyPancakeSwapSection {
     margin-left: auto;
-    margin-right: 0%;
-    /* float: right; */
-    padding-top: 100px;
-    padding-bottom: 500px;
-    width: 40%;
+     /*margin-right: 20%;*/
+     margin-right: 57%;
+     /* float: right; */
+     padding-top: 80px;
+     padding-bottom: 500px;
+     width: 20%;
   }
   
   .spacerForBuyPancakeSwapSection {
-    padding-top: 200px;
+    padding-top: 300px;
   }
   

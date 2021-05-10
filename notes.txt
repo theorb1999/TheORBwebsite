@@ -58,3 +58,13 @@ git remote set-url origin https://github.com/theorb1999/TheORBwebsite.git
 
 
 Now use the UI to push it
+
+
+
+
+
+
+
+
+
+react kinda sucks, but you need to update the child components properties too

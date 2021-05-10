@@ -44,3 +44,10 @@
     font-size:1.5em;
     
   }
+
+
+
+  .boldedFarm{
+    font-weight: 700;
+    color: rgb(238, 255, 0);
+  }

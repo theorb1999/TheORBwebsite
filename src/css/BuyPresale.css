@@ -1,4 +1,3 @@
-
 .buyPresaleSection {
     margin-left: auto;
     /*margin-right: 20%;*/
@@ -10,7 +9,7 @@
   }
   
   .spacerForBuyPresaleSection {
-    padding-top: 210px;
+    padding-top: 180px;
   }
   
   .insideCardForPresale {
@@ -33,3 +32,15 @@
     font-family: 'Quicksand', sans-serif;
     color: gold;
   }
+
+  .maxMinOrbWarning{
+    
+  }
+
+  .AccountNotConnectedError{
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
+    
+  }
+

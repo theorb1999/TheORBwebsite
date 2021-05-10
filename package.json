@@ -1,5 +1,5 @@
 {
-  "name": "ORBwebsite",
+  "name": "orbwebsite",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -39,6 +39,7 @@
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
-    "react-transition-group": "^4.4.1"
+    "react-transition-group": "^4.4.1",
+    "web3": "^1.3.5"
   }
 }

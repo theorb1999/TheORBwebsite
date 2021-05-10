@@ -7,20 +7,142 @@ import { InputNumber } from 'primereact/inputnumber';
 
 console.log("called Buy Presale");
 
-const updateAmountsORBBNB = () => {
-    console.log("called updateAmountsORBBNB");
-    // TODO - update the amount of ORB or BNB depending on what is input
-    // for example, if inputting 1 BNB, update the other side to have 100 ORB
-
-}
-
-
-const buyOrbClicked = () => {
-    console.log("called buyOrbClicked");
-
-}
-
 class BuyPresale extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isAccountConnected: false,
+            contractOfORB: '',
+            account: '',
+
+            valueOfInputBNB: 0,
+            valueOfInputORB: 0,
+
+            presaleBuyLoading: '',
+
+            buyButtonDisabled: true,
+            ORBinvalidError: '\u00A0',
+            BNBinvalidError: '\u00A0',
+            StyleOfBNBinvalidError: {},
+            StyleOfORBinvalidError: {},
+
+            AccountNotConnectedError: '\u00A0'
+        };
+
+        this.updatedAmountBNB = this.updatedAmountBNB.bind(this);
+        this.updatedAmountORB = this.updatedAmountORB.bind(this);
+        this.setInvalidAmountsORBandBNB = this.setInvalidAmountsORBandBNB.bind(this);
+        this.setValidAmountsORBandBNB = this.setValidAmountsORBandBNB.bind(this);
+        this.buyOrbClicked = this.buyOrbClicked.bind(this);
+
+        this.accountConnectedForPresale = this.accountConnectedForPresale.bind(this);
+    }
+    componentDidMount() {
+        this.accountConnectedForPresale();
+    }
+
+
+    accountConnectedForPresale() {
+        console.log("accountConnectedForPresale called");
+        console.log("this.isAccountConnected", this.state.isAccountConnected);
+        if(this.state.isAccountConnected){
+            this.state.AccountNotConnectedError = 'ERROR!!! - Acount not connected \n Please click Connect to The ORB \n in the top right menu.';
+        }
+        else{
+            this.state.AccountNotConnectedError = 'ERROR!!! - Acount not connected \n Please click Connect to The ORB \n in the top right menu.';
+        }
+
+
+    }
+
+    
+    setInvalidAmountsORBandBNB(isMax) {
+
+        this.setState({ buyButtonDisabled: true });
+        this.setState({ StyleOfBNBinvalidError: { border: "1px solid red", borderRadius: "5px" } });
+        this.setState({ StyleOfORBinvalidError: { border: "1px solid red", borderRadius: "5px" } });
+
+        if(isMax){
+            this.setState({ BNBinvalidError: '1 BNB Max' });
+            this.setState({ ORBinvalidError: '1,000 ORB Max' });
+        }
+        else{
+            this.setState({ BNBinvalidError: 'At least 0.01 BNB Required' });
+            this.setState({ ORBinvalidError: 'At least 10 ORB Required' });
+        }
+        
+    }
+
+    setValidAmountsORBandBNB() {
+        this.setState({ buyButtonDisabled: false });
+        this.setState({ StyleOfORBinvalidError: {} });
+        this.setState({ ORBinvalidError: '\u00A0' });
+        this.setState({ StyleOfBNBinvalidError: {} });
+        this.setState({ BNBinvalidError: '\u00A0' });
+    }
+
+
+
+
+    updatedAmountBNB(event) {
+        console.log("called updatedAmountBNB");
+        var valueOfInputBNB = event.value;
+        this.setState({ valueOfInputBNB: valueOfInputBNB });
+        var newORBvalue = valueOfInputBNB * 1000;
+        console.log("newORBvalue", newORBvalue);
+        this.setState({ valueOfInputORB: newORBvalue });
+
+        if (valueOfInputBNB > 1) {
+            this.setInvalidAmountsORBandBNB(true);
+        }
+        else if (valueOfInputBNB < 0.01) {
+            this.setInvalidAmountsORBandBNB(false);   
+        }
+        else {
+            this.setValidAmountsORBandBNB();
+        }
+    }
+
+
+
+    updatedAmountORB(event) {
+        console.log("called updatedAmountORB");
+        var valueOfInputORB = event.value;
+        this.setState({ valueOfInputORB: valueOfInputORB });
+        var newBNBvalue = valueOfInputORB / 1000;
+        console.log("newBNBvalue", newBNBvalue);
+        this.setState({ valueOfInputBNB: newBNBvalue });
+
+        if (valueOfInputORB > 1000) {
+            this.setInvalidAmountsORBandBNB(true);
+        }
+        else if (valueOfInputORB < 10) {
+            this.setInvalidAmountsORBandBNB(false);   
+        }
+        else {
+            this.setValidAmountsORBandBNB();
+        }
+    }
+
+    async buyOrbClicked() {
+        console.log("called buyOrbClicked");
+
+        // const deadAddressVar = await this.state.contractOfORB.methods.deadAddress().call();
+        // console.log("deadAddressVar", deadAddressVar);
+
+        var payableBNBAmount = 1;
+        var keyCode = 1337;
+
+        this.setState({ presaleBuyLoading: true, presaleBuyReceipt: '' });
+        this.state.contractOfORB.methods.presaleBuy(payableBNBAmount, keyCode)
+            .send({ from: this.state.account })
+            .once('receipt', (receipt) => {
+                this.setState({ presaleBuyLoading: false });
+                this.setState({ presaleBuyReceipt: receipt });
+            })
+    }
 
 
     render() {
@@ -40,24 +162,55 @@ class BuyPresale extends Component {
                         <div className="spacerForCardBuyPresaleSection"></div>
 
                         <div className="presaleRate">
-                            Rate is 1 BNB = 100 ORB
+                            Rate is 1 BNB = 1,000 ORB
+                        </div>
+
+                        <div className="spacerForCardBuyPresaleSection"></div>
+
+                        <div className="maxMinOrbWarning">
+                            Maximum 1,000 ORB per Address.
+                            <br />
+                            Maximum 1 BNB per Address.
+                            <br />
+                            Minimum 0.01 BNB per Address.
+                            <br />
+                            Minimum 10 ORB per Address.
                         </div>
 
                         <div className="spacerForCardBuyPresaleSection"></div>
 
                         <div className="inputBNBAmountdiv">
                             <label className="labelsForORBandBNBamount" >BNB to Sell:  </label>
-                            <InputNumber id="inputBNBamountID" onChange={updateAmountsORBBNB} />
+                            <InputNumber
+                                id="inputBNBamountID"
+                                value={this.state.valueOfInputBNB}
+                                mode="decimal"
+                                minFractionDigits={2}
+                                maxFractionDigits={2}
+                                style={this.state.StyleOfBNBinvalidError}
+                                onChange={this.updatedAmountBNB} />
                         </div>
 
-                        <div className="spacerForCardBuyPresaleSection"></div>
+                        <small id="BNBinvalidID" className="p-error">{this.state.BNBinvalidError}</small>
+
+                        {/* <div className="spacerForCardBuyPresaleSection"></div> */}
 
                         <div className="inputORBAmountdiv">
-                            <label className="labelsForORBandBNBamount">ORB to Sell:  </label>
-                            <InputNumber id="inputORBamountID" onChange={updateAmountsORBBNB} />
+                            <label className="labelsForORBandBNBamount">ORB to Buy:  </label>
+                            <InputNumber
+                                id="inputORBamountID"
+                                value={this.state.valueOfInputORB}
+                                style={this.state.StyleOfORBinvalidError}
+                                onChange={this.updatedAmountORB} />
                         </div>
 
-                        <div className="spacerForCardBuyPresaleSection"></div>
+                        <small id="ORBinvalidID" className="p-error">{this.state.ORBinvalidError}</small>
+
+                        {/* <div className="spacerForCardBuyPresaleSection"></div> */}
+
+                        <div className="AccountNotConnectedError">
+                            {this.state.AccountNotConnectedError}
+                        </div>
 
 
 
@@ -65,7 +218,8 @@ class BuyPresale extends Component {
                             icon="pi pi-money-bill"
                             style={{ fontWeight: 'bold' }}
                             label="Buy ORB!"
-                            onClick={buyOrbClicked} />
+                            loading={this.state.buyButtonDisabled}
+                            onClick={this.buyOrbClicked} />
                     </div>
 
 
