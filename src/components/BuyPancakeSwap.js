@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 
 import { Button } from 'primereact/button';
 
+import '../css/BuyPancakeSwap.css';
+
 
 console.log("called Buy PancakeSwap");
 
 const goToPancakeSwap = () => {
     // CHANGEIT - Need Address Here
-    // window.open("https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xC9c7C6A590E82C576de7553142d47a5fb63f9e90");
-    window.open("https://app.uniswap.org/#/swap?outputCurrency=0x1ce2de406359853C7A8114E9009521d93d83b3bD");
+    // window.open("https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x97a3A94D10C684437B538827316dA5816710Ea7d");
+    window.open("https://app.uniswap.org/#/swap?outputCurrency=0x97a3A94D10C684437B538827316dA5816710Ea7d");
 }
 
 class BuyPancakeSwap extends Component {
@@ -21,14 +23,11 @@ class BuyPancakeSwap extends Component {
 
             <div className="spacerForBuyPancakeSwapSection"></div>
 
-
                 <Button className="p-button-raised p-button-rounded p-button-lg"
                     icon="pi pi-money-bill"
                     style={{ fontWeight: 'bold' }}
                     label="Buy on PancakeSwap"
                     onClick={goToPancakeSwap} />
-
-
 
             </div>
         );
@@ -38,5 +37,5 @@ class BuyPancakeSwap extends Component {
 export default BuyPancakeSwap;
 
 
-// TODO - read only knob to show Amount of Liquidity in PancakeSwap
+// TODO - V2 read only knob to show Amount of Liquidity in PancakeSwap
 // To find the existing liquidity, check the Uniswap LP Tokens, call the getReserveFunctions

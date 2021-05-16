@@ -2,11 +2,11 @@
 .stakeSection {
     margin-left: auto;
     /*margin-right: 15%;*/
-    margin-right: 50%;
+    margin-right: 55%;
     /* float: right; */
     padding-top: 100px;
     padding-bottom: 500px;
-    width: 30%;
+    width: 35%;
   }
   
   .spacerForStakeSection {
@@ -19,39 +19,39 @@
   
   .stakingIsLiveHeader {
     font-weight: bold;
-    font-size: 32px;
+    font-size: 2vw;
     font-family: 'Quicksand', sans-serif;
   }
   
   .labelsForAmountStaked {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.4vw;
     font-family: 'Quicksand', sans-serif;
   }
   
   .apyAmountHeader {
     color: gold;
     font-weight: bold;
-    font-size: 28px;
+    font-size: 2vw;
     font-family: 'Quicksand', sans-serif;
   }
   
   .orbStakedDiv {
     text-align: left;
     margin: 10px;
-    padding-left: 130px;
+    padding-left: 10%;
   }
   
   .orbOwnedDiv {
     text-align: left;
     margin: 10px;
-    padding-left: 130px;
+    padding-left: 10%;
   }
   
   .orbGeneratedDiv {
     text-align: left;
     margin: 10px;
-    padding-left: 130px;
+    padding-left: 10%;
   }
   
   .labelsForORBtoStakeAmount {
@@ -72,17 +72,25 @@
   .timeUntilUnlockDiv {
     text-align: left;
     margin: 10px;
-    padding-left: 75px;
+    padding-left: 10%;
   }
   
   .stakeStartDateDiv {
     text-align: left;
     margin: 10px;
-    padding-left: 75px;
+    padding-left: 10%;
   }
   
   .unlockDateDiv {
     text-align: left;
     margin: 10px;
-    padding-left: 75px;
+    padding-left: 10%;
+  }
+
+
+  .AccountNotConnectedError{
+    font-weight: bold;
+    font-size: 1.5vw;
+    color: red;
+    
   }

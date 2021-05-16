@@ -1,37 +1,53 @@
 .faqSection {
-    margin-left: auto;
-    /*margin-right: 8%;*/
-    margin-right:45%;
-  
-    /* margin-left: 10%;
+  margin-left: 10%;
+  /*margin-right: 8%;*/
+  /* margin-right:50%; */
+  /* margin-left: 10%;
     margin-right: auto; */
-  
-    /* float: right; */
-    padding-top: 100px;
-    padding-bottom: 500px;
-    width: 40%;
-    font-family: 'Quicksand', sans-serif!important;
-    color:white;
-  }
-  
-  .spacerForFAQsections {
-    padding-top: 25px;
-  }
+  /* float: right; */
+  padding-top: 100px;
+  padding-bottom: 500px;
+  width: 60%;
+  font-family: 'Quicksand', sans-serif!important;
+  color: white;
+}
+
+.spacerForFAQsections {
+  padding-top: 25px;
+}
+
+.disclaimerHeader {
+  font-size: 3vw;
+  color: red;
+  text-shadow: 2px 2px black;
+}
+
+.disclaimerContent {
+  color: red;
+  font-size: 1.5vw;
+  text-shadow: 2px 2px black;
+  padding: 10px;
+}
+
+.faq-header {
+  font-size: 3vw;
+  border-bottom: 1px dotted #ccc;
+  padding: 24px;
+}
+
+.faq-content {
+  margin: 0 auto;
+}
+
+.faq-question {
+  padding: 20px 0;
+  border-bottom: 1px dotted #ccc;
+}
 
 
 
-  
-.faq-header{
-    font-size: 32px;
-    border-bottom: 1px dotted #ccc;
-    padding: 24px;
-  }
-  
-  .faq-content {
-    margin: 0 auto;
-  }
-  
-  .faq-question {
-    padding: 20px 0;
-    border-bottom: 1px dotted #ccc;
-  }
+.faq-overview{
+  font-size: 2.5vw;
+  color:cyan;
+  text-shadow: 2px 2px black;
+}

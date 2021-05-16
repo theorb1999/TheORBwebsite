@@ -3,8 +3,10 @@ import React, { Component } from 'react';
 import { Card } from 'primereact/card';
 
 import avatarYoshikoImg from '../images/AvatarYoshiko.jpg';
-import avatarCatImg from '../images/AvatarCat.jpg';
+import avatarYsImg from '../images/AvatarYs.jpg';
 import avatarNoxImg from '../images/AvatarNox.jpg';
+
+import '../css/Team.css';
 
 
 
@@ -25,7 +27,7 @@ class Team extends Component {
 
                     <div className="yoshikoCardDiv">
 
-                        <Card title="Yoshiko" subTitle="Contract Developer" style={{ width: '15em' }} header={<img src={avatarYoshikoImg} alt="Yoshiko Avatar" />}>
+                        <Card title="Yoshiko" subTitle="Developer" style={{ width: '15em' }} header={<img src={avatarYoshikoImg} alt="Yoshiko Avatar" />}>
                             <p className="p-m-0" style={{ lineHeight: '1.5' }}>
                                 Discord
                                 <br />
@@ -52,13 +54,13 @@ class Team extends Component {
                     </div>
 
 
-                    <div className="catCardDiv">
+                    <div className="ysCardDiv">
 
-                        <Card title="Cat" subTitle="Manager" style={{ width: '15em' }} header={<img src={avatarCatImg} alt="Cat Avatar" />}>
+                        <Card title="YS" subTitle="Marketer" style={{ width: '15em' }} header={<img src={avatarYsImg} alt="YS Avatar" />}>
                             <p className="p-m-0" style={{ lineHeight: '1.5' }}>
                                 Discord
                                 <br />
-                                CoffeeCat#6551
+                                YS#6954
                                 <br />
                                 <br />
                             </p>

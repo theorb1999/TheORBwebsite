@@ -9,42 +9,44 @@ import 'primeicons/primeicons.css';
 
 
 // Prime React Components
-import { Sidebar } from 'primereact/sidebar';
-import { Menu } from 'primereact/menu';
+// import { Sidebar } from 'primereact/sidebar';
+// import { Menu } from 'primereact/menu';
 import { TabMenu } from 'primereact/tabmenu';
-import { Fieldset } from 'primereact/fieldset';
-import { Card } from 'primereact/card';
-import { Button } from 'primereact/button';
+// import { Fieldset } from 'primereact/fieldset';
+// import { Card } from 'primereact/card';
+// import { Button } from 'primereact/button';
 
 // Router
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+// import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 
 
 // Sections
 import Home from './components/Home';
-import './css/Home.css';
-import Stars from './components/Stars';
-import './css/Stars.css';
+// import Stars from './components/Stars';
 import FAQ from './components/FAQ';
-import './css/FAQ.css';
-import OrbImage from './components/OrbImage';
-import './css/OrbImage.css';
-import BuyPancakeSwap from './components/BuyPancakeSwap';
-import './css/BuyPancakeSwap.css';
+import Whitepaper from './components/Whitepaper';
 import BuyPresale from './components/BuyPresale';
-import './css/BuyPresale.css';
+// import BuyPancakeSwap from './components/BuyPancakeSwap';   // CHANGEIT - comment or uncomment when needed
 import Stake from './components/Stake';
-import './css/Stake.css';
 import Team from './components/Team';
-import './css/Team.css';
 import Socials from './components/Socials';
-import './css/Socials.css';
+
+
+
+
+
+
+
+
+
+
 
 
 //import backgroundImg from './images/backgroundImageCompressed.jpg';
 
-const { abi } = require('./web3/ContractInfo.json');
-const { bytecode } = require('./web3/ContractInfo.json');
+const { abi } = require('./web3/ContractInfo.json');        // CHANGEIT - Update the ContractInfo.json with the new stuff
+// const { bytecode } = require('./web3/ContractInfo.json');
 
 console.log("called App");
 
@@ -57,9 +59,9 @@ class App extends Component {
       isAccountConnected: false,
       account: '',
       web3: '',
-      addressOfORBcontract: '0x1ce2de406359853C7A8114E9009521d93d83b3bD',    // CHANGEIT - set the live contract address
+      addressOfORBcontract: '0x97a3A94D10C684437B538827316dA5816710Ea7d',    // CHANGEIT - set the live contract address
       contractOfORB: ''
-      
+
     }
 
     this.BuyPresaleElement = React.createRef();
@@ -68,6 +70,7 @@ class App extends Component {
     this.itemsForTabMenu = [
       { label: 'Home', icon: 'pi pi-home', command: () => { window.location = "#home" } },
       { label: 'FAQ', icon: 'pi pi-question-circle', command: () => { window.location = "#faq" } },
+      { label: 'Whitepaper', icon: 'pi pi-paperclip', command: () => { window.location = "#whitepaper" } },
       { label: 'Buy', icon: 'pi pi-money-bill', command: () => { window.location = "#buy" } },
       { label: 'Stake and Farm', icon: 'pi pi-dollar', command: () => { window.location = "#stake" } },
       { label: 'The Team', icon: 'pi pi-id-card', command: () => { window.location = "#team" } },
@@ -77,9 +80,79 @@ class App extends Component {
 
 
     this.connectToORBclicked = this.connectToORBclicked.bind(this);
+    this.checkIfAlreadyConnected = this.checkIfAlreadyConnected.bind(this);
+    this.makeConnectionsToORBcontract = this.makeConnectionsToORBcontract.bind(this);
 
     // window.location = "/home"
     window.location = "#home"
+  }
+  componentDidMount() {
+
+    this.checkIfAlreadyConnected();
+
+
+  }
+
+
+  async checkIfAlreadyConnected() {
+
+    if (typeof window.ethereum !== 'undefined') {
+      // set the state of web3
+      const web3 = new Web3(window.ethereum);
+      this.setState({ web3: web3 });
+      this.BuyPresaleElement.current.state.web3 = web3;
+      this.StakeElement.current.state.web3 = web3;
+
+      const accountsFromWeb3Check = await web3.eth.getAccounts();
+      if (accountsFromWeb3Check.length == '0') {
+        console.log("User is not logged in to MetaMask");
+        this.setState({ isAccountConnected: false });
+        this.BuyPresaleElement.current.state.isAccountConnected = false;
+        this.StakeElement.current.state.isAccountConnected = false;
+      }
+      else {
+        console.log("User is logged in to MetaMask");
+        this.makeConnectionsToORBcontract();
+      }
+    }
+  }
+
+
+  async makeConnectionsToORBcontract() {
+
+    var accountsFromMetaMask = await window.ethereum.send('eth_requestAccounts');
+    console.log("accountsFromMetaMask.result[0]", accountsFromMetaMask.result[0]);
+    this.setState({ account: accountsFromMetaMask.result[0] });
+    this.BuyPresaleElement.current.state.account = accountsFromMetaMask.result[0];
+    this.StakeElement.current.state.account = accountsFromMetaMask.result[0];
+
+    var contractOfORB = new this.state.web3.eth.Contract(abi, this.state.addressOfORBcontract);
+    this.setState({ contractOfORB: contractOfORB });
+    this.BuyPresaleElement.current.state.contractOfORB = contractOfORB;
+    this.StakeElement.current.state.contractOfORB = contractOfORB;
+
+    this.setState({ isAccountConnected: true });
+    this.BuyPresaleElement.current.state.isAccountConnected = true;
+    this.StakeElement.current.state.isAccountConnected = true;
+
+    // set the Web3 stuff
+    this.BuyPresaleElement.current.state.web3 = this.state.web3;
+    this.StakeElement.current.state.web3 = this.state.web3;
+
+    // Call Presale Loading Functions
+    this.BuyPresaleElement.current.accountConnectedForPresale();
+
+    // Call Stake Loading Functions 
+    this.StakeElement.current.checkIfStakingIsEnabled();
+    this.StakeElement.current.checkIfAllStakingUnlocked();
+    this.StakeElement.current.accountConnectedForStaking();
+
+
+    // example of a call, for a read variable
+    // var deadAddressVar = await contractOfORB.methods.deadAddress().call();
+    // console.log("deadAddressVar", deadAddressVar);
+
+
   }
 
 
@@ -87,33 +160,7 @@ class App extends Component {
     console.log("called connectToORBclicked");
     if (typeof window.ethereum !== 'undefined') {
       console.log('ethereum detected!');
-      const accountsFromMetaMask = await window.ethereum.send('eth_requestAccounts');
-      this.setState({ account: accountsFromMetaMask[0] })
-
-      // update children components
-      this.BuyPresaleElement.current.state.account = accountsFromMetaMask[0];
-      this.StakeElement.current.state.account = accountsFromMetaMask[0];
-
-      const web3 = new Web3(window.ethereum);
-      this.setState({ web3: web3 });
-      const contractOfORB = new web3.eth.Contract(abi, this.state.addressOfORBcontract);
-      this.setState({ contractOfORB: contractOfORB });
-      // console.log("this.state.contractOfORB", this.state.contractOfORB);
-
-      // need to update the children components that are using the Contract Address
-      this.BuyPresaleElement.current.state.contractOfORB = contractOfORB;
-      this.StakeElement.current.state.contractOfORB = contractOfORB;
-
-      this.setState({ isAccountConnected: true });
-      this.BuyPresaleElement.current.state.isAccountConnected = true;
-      this.StakeElement.current.state.isAccountConnected = true;
-
-      this.BuyPresaleElement.current.accountConnectedForPresale();
-      this.StakeElement.current.accountConnectedForStaking();
-      
-      // example of a call, for a read variable
-      const deadAddressVar = await contractOfORB.methods.deadAddress().call();
-      // console.log("deadAddressVar", deadAddressVar);
+      this.makeConnectionsToORBcontract();
     }
   }
 
@@ -121,39 +168,43 @@ class App extends Component {
   render() {
     return (
       <Router>
+
+
         <div className="App" >
 
           <TabMenu className="topNavMenu" model={this.itemsForTabMenu} activeItem={this.itemsForTabMenu[0]} style={{}} />
 
-          <Stars />
+          <div id="orbimg"></div>
+
+
 
           <Home />
 
-          <Stars />
+
 
           <FAQ />
 
-          <Stars />
+
+
+          <Whitepaper />
+
+
 
           <BuyPresale ref={this.BuyPresaleElement} />
 
           {/* <BuyPancakeSwap /> */}
 
-          <Stars />
 
-          <Stake ref={this.StakeElement}  />
 
-          <Stars />
+          <Stake ref={this.StakeElement} />
+
+
 
           <Team />
 
-          <Stars />
+
 
           <Socials />
-
-          <Stars />
-
-
 
 
 

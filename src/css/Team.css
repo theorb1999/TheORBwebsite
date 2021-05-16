@@ -3,20 +3,20 @@
   }
 
   .teamSection {
-    margin-left: auto;
+    margin-left: 5%;
     /*margin-right: 15%;*/
-    margin-right: 50%;
+    /* margin-right: 50%; */
     /* float: right; */
     padding-top: 100px;
     padding-bottom: 500px;
-    width: 40%;
+    width: 60%;
   }
 
 
   .team-header{
-    font-size: 32px;
+    font-size: 2vw;
     color: #ccc;
-    border-bottom: 1px dotted #ccc;
+    /* border-bottom: 1px dotted #ccc; */
     padding: 24px;
   }
 
@@ -24,7 +24,7 @@
   .teamCardContainer{
     display:inline-block;
     /* overflow-x:scroll; */
-    white-space:nowrap;
+    /* white-space:nowrap; */
   }
 
   .yoshikoCardDiv{
@@ -44,7 +44,7 @@
   }
 
 
-  .catCardDiv{
+  .ysCardDiv{
     margin: 5px;
     /* float:left; */
     /* display: inline; */

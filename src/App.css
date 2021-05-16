@@ -4,19 +4,36 @@
 
 .p-menuitem-icon {
   color: #FFFFFF !important;
+
 }
 
 .p-menuitem-text {
   color: #FFFFFF !important;
+  font-size: 1.7vh;
 }
 
 .p-menu .p-menuitem .p-menuitem-link:hover {
   background-color: #5D5C61;
 }
 
+
+
+
+
 .topNavMenu {
   position: fixed;
-  left: 25%;
+  /* position:absolute; */
+  /* margin: 0 auto; */
+
+  /* width: 100%; */
+
+  /* position:initial; */
+
+  
+
+  top: 0;
+
+  /* left: 25%; */
 
   /* text-align: center; */
   /* margin: 0 auto; */
@@ -26,7 +43,7 @@
 
   /*right: 0; */
   /* left: 0; */
-  top: 0;
+  
 }
 
 #orbimg {
@@ -37,34 +54,43 @@
   left: 60%;
   top: 30%;
   position: fixed;
+
   background-repeat: no-repeat;
   z-index: -1000;
 }
 
+/* 
 .backgroundImgSection {
   /* width: 100%;  */
   /* height: 100%;  */
-  position: fixed;
   /* position:absolute; */
   /* position: relative; */
   /* position: sticky; */
   /* right: 0px;  */
-  left: 0px;
-  top: 0px;
-  z-index: -1;
-  /* Ensure div tag stays behind content; -999 might work, too. */
-}
 
+
+
+/*
+  z-index: -1; 
+  /* Ensure div tag stays behind content; -999 might work, too. */
+  /*
+}
+*/
+/* 
 .logoSection {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /* float: right; */
+  
   padding-top: 100px;
   padding-bottom: 500px;
+  
+  width: 10%; */
+
+
+  /* float: right; */
   /* width: 90%; */
-  width: 10%;
-}
+/* } */
 
 .sentence {
   margin-bottom: 4%;
@@ -163,7 +189,7 @@ a.fancyButton2:hover {
 /*NewFAQ*/
 
 .panel-title {
-  font-size: 24px;
+  font-size: 1.5vw;
   width: 100%;
   position: relative;
   margin: 0;
@@ -173,7 +199,7 @@ a.fancyButton2:hover {
 }
 
 .panel-content {
-  font-size: 20px;
+  font-size: 1.5vw;
   padding: 0px 14px;
   margin: 0 40px;
   height: 0;
@@ -198,7 +224,7 @@ a.fancyButton2:hover {
   margin-left: 20px;
   margin-top: 4px;
   z-index: 5;
-  font-size: 42px;
+  font-size: 2vw;
   line-height: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;

@@ -3,18 +3,17 @@
   }
 
   .socialsSection {
-    margin-left: auto;
-    /*margin-right: 15%;*/
-    margin-right: 50%;
+    margin-left: 10%;
+
     /* float: right; */
     padding-top: 100px;
     padding-bottom: 500px;
-    width: 30%;
+    width: 50%;
   }
 
 
   .socials-header{
-    font-size: 32px;
+    font-size: 2vw;
     color: #ccc;
     /* border-bottom: 1px dotted #ccc; */
     padding: 24px;
@@ -88,6 +87,27 @@
 }
 .button-demo .templateForButtons .p-button.telegram:focus {
     box-shadow: 0 0 0 1px var(--blue-700);
+}
+
+
+
+
+.button-demo .templateForButtons .p-button.reddit {
+    background: linear-gradient(to left, var(--pink-700) 50%, var(--pink-800) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: background-position 0.5s ease-out;
+    color: #fff;
+    border-color: var(--pink-800);
+}
+.button-demo .templateForButtons .p-button.reddit:hover {
+    background-position: left bottom;
+}
+.button-demo .templateForButtons .p-button.reddit i {
+    margin-right: 5px;
+}
+.button-demo .templateForButtons .p-button.reddit:focus {
+    box-shadow: 0 0 0 1px var(--pink-700);
 }
 
 

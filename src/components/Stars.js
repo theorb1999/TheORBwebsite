@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import '../css/Stars.css';
 
 console.log("called Stars");
+
+
 
 class Stars extends Component {
 

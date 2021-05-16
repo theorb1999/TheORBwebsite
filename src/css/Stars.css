@@ -1,4 +1,10 @@
 
+
+
+
+
+
+
 .stars .container {
     position: absolute;
     animation: stars linear infinite;
@@ -1422,6 +1428,11 @@
     animation-duration: 30.9s;
     background: rgba(254,158,202,0.9);
   }
+
+
+
+
+
   @-moz-keyframes stars {
     0% {
       transform: translateY(110vh) translateZ(0);

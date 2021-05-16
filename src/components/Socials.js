@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Button } from 'primereact/button';
 
+import '../css/Socials.css';
+
 
 
 console.log("called Socials");
@@ -9,10 +11,17 @@ const discordClicked = () => {
     window.open("https://discord.gg/ZaFABpJgC5", "_blank");
 }
 
-const twitterClicked = () => {
-    window.open("", "_blank");
+const telegramClicked = () => {
+    window.open("https://t.me/theORB_The_Staking_Game", "_blank");
 }
 
+const twitterClicked = () => {
+    window.open("https://twitter.com/TheOrbToken", "_blank");
+}
+
+const redditClicked = () => {
+    window.open("https://www.reddit.com/r/TheOrbToken/", "_blank");
+}
 
 class Socials extends Component {
 
@@ -40,9 +49,15 @@ class Socials extends Component {
                             <span className="">Twitter</span>
                         </Button>
 
-                        <Button className="telegram" onClick={twitterClicked} >
+                        <Button className="telegram" onClick={telegramClicked} >
                             <i className="pi pi-send"></i>
                             <span className="">Telegram</span>
+                        </Button>
+
+
+                        <Button className="reddit" onClick={redditClicked} >
+                            <i className="pi pi-eye"></i>
+                            <span className="">Reddit</span>
                         </Button>
 
 

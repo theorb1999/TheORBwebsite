@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+
+
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 
 import { InputNumber } from 'primereact/inputnumber';
+
+import '../css/BuyPresale.css';
 
 
 console.log("called Buy Presale");
@@ -16,6 +20,7 @@ class BuyPresale extends Component {
             isAccountConnected: false,
             contractOfORB: '',
             account: '',
+            web3: '',
 
             valueOfInputBNB: 0,
             valueOfInputORB: 0,
@@ -28,7 +33,11 @@ class BuyPresale extends Component {
             StyleOfBNBinvalidError: {},
             StyleOfORBinvalidError: {},
 
-            AccountNotConnectedError: '\u00A0'
+            AccountNotConnectedError: '\u00A0',
+
+            isInputBNBamountDisabled: true,
+            isInputORBamountDisabled: true
+
         };
 
         this.updatedAmountBNB = this.updatedAmountBNB.bind(this);
@@ -39,19 +48,31 @@ class BuyPresale extends Component {
 
         this.accountConnectedForPresale = this.accountConnectedForPresale.bind(this);
     }
-    componentDidMount() {
-        this.accountConnectedForPresale();
-    }
 
 
-    accountConnectedForPresale() {
+    async accountConnectedForPresale() {
         console.log("accountConnectedForPresale called");
         console.log("this.isAccountConnected", this.state.isAccountConnected);
         if(this.state.isAccountConnected){
-            this.state.AccountNotConnectedError = 'ERROR!!! - Acount not connected \n Please click Connect to The ORB \n in the top right menu.';
+            this.setState({ AccountNotConnectedError: '\u00A0' });
+            this.setState({ isInputBNBamountDisabled: false });
+            this.setState({ isInputORBamountDisabled: false });
+
+            var balanceOfConnectedAccount = await this.state.contractOfORB.methods.balanceOf(this.state.account).call();
+            console.log("balanceOfConnectedAccount", balanceOfConnectedAccount);
+
+            if(balanceOfConnectedAccount > 1000000000000){
+                this.setState({ AccountNotConnectedError: 'ERROR!!! - You have too much ORB! \n 1,000 ORB Limit.' });
+                this.setState({ isInputBNBamountDisabled: true });
+                this.setState({ isInputORBamountDisabled: true });
+            }
+
         }
         else{
-            this.state.AccountNotConnectedError = 'ERROR!!! - Acount not connected \n Please click Connect to The ORB \n in the top right menu.';
+            this.setState({ AccountNotConnectedError: 'ERROR!!! - Acount not connected \n Please click Connect to The ORB \n in the top right menu.' });
+            this.setState({ isInputBNBamountDisabled: true });
+            this.setState({ isInputORBamountDisabled: true });
+            
         }
 
 
@@ -132,12 +153,19 @@ class BuyPresale extends Component {
         // const deadAddressVar = await this.state.contractOfORB.methods.deadAddress().call();
         // console.log("deadAddressVar", deadAddressVar);
 
-        var payableBNBAmount = 1;
+
+        var payableBNBAmount = this.state.valueOfInputBNB;
+        var payableBNBAmountConverted = this.state.web3.utils.toWei(payableBNBAmount.toString(), 'ether');
+        console.log("payableBNBAmountConverted", payableBNBAmountConverted);
+
         var keyCode = 1337;
 
         this.setState({ presaleBuyLoading: true, presaleBuyReceipt: '' });
-        this.state.contractOfORB.methods.presaleBuy(payableBNBAmount, keyCode)
-            .send({ from: this.state.account })
+        this.state.contractOfORB.methods.presaleBuy(keyCode)
+            .send({ 
+                from: this.state.account,
+                value: payableBNBAmountConverted
+            })
             .once('receipt', (receipt) => {
                 this.setState({ presaleBuyLoading: false });
                 this.setState({ presaleBuyReceipt: receipt });
@@ -183,6 +211,7 @@ class BuyPresale extends Component {
                             <label className="labelsForORBandBNBamount" >BNB to Sell:  </label>
                             <InputNumber
                                 id="inputBNBamountID"
+                                disabled={this.state.isInputBNBamountDisabled}
                                 value={this.state.valueOfInputBNB}
                                 mode="decimal"
                                 minFractionDigits={2}
@@ -199,6 +228,7 @@ class BuyPresale extends Component {
                             <label className="labelsForORBandBNBamount">ORB to Buy:  </label>
                             <InputNumber
                                 id="inputORBamountID"
+                                disabled={this.state.isInputORBamountDisabled}
                                 value={this.state.valueOfInputORB}
                                 style={this.state.StyleOfORBinvalidError}
                                 onChange={this.updatedAmountORB} />

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import '../css/Home.css';
 // import logoImg from './images/theORBlogo.png';
-import { Card } from 'primereact/card';
+// import { Card } from 'primereact/card';
 
 console.log("called Home");
 
@@ -12,7 +13,7 @@ class Home extends Component {
 
         return (
             <div className="homeSection" id="home" >
-                <div id="orbimg"></div>
+                
 
                 <div className="spacerForHomesection"></div>
 
