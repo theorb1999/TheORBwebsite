@@ -34,10 +34,11 @@ import Socials from './components/Socials';
 
 
 
-
-
-
-
+// import WalletConnectProvider from "@walletconnect/web3-provider"; // wallet connect
+// import Web3Modal from "web3modal";
+// import WalletConnect from "@walletconnect/client";
+// import QRCodeModal from "@walletconnect/qrcode-modal";
+import detectEthereumProvider from '@metamask/detect-provider'
 
 
 
@@ -59,7 +60,7 @@ class App extends Component {
       isAccountConnected: false,
       account: '',
       web3: '',
-      addressOfORBcontract: '0x97a3A94D10C684437B538827316dA5816710Ea7d',    // CHANGEIT - set the live contract address
+      addressOfORBcontract: '0x23103FE58009cE4F6870245b84031f4A56523b3f',    // CHANGEIT - set the live contract address
       contractOfORB: ''
 
     }
@@ -96,9 +97,15 @@ class App extends Component {
 
   async checkIfAlreadyConnected() {
 
+    
+
     if (typeof window.ethereum !== 'undefined') {
       // set the state of web3
-      const web3 = new Web3(window.ethereum);
+
+      const provider = await detectEthereumProvider()
+
+      // const web3 = new Web3(window.ethereum);
+      const web3 = new Web3(provider);
       this.setState({ web3: web3 });
       this.BuyPresaleElement.current.state.web3 = web3;
       this.StakeElement.current.state.web3 = web3;
@@ -115,16 +122,33 @@ class App extends Component {
         this.makeConnectionsToORBcontract();
       }
     }
+
+
   }
 
 
   async makeConnectionsToORBcontract() {
 
-    var accountsFromMetaMask = await window.ethereum.send('eth_requestAccounts');
-    console.log("accountsFromMetaMask.result[0]", accountsFromMetaMask.result[0]);
-    this.setState({ account: accountsFromMetaMask.result[0] });
-    this.BuyPresaleElement.current.state.account = accountsFromMetaMask.result[0];
-    this.StakeElement.current.state.account = accountsFromMetaMask.result[0];
+
+
+
+    // old way that doesn't work with trust wallet
+    // var accountsFromMetaMask = await window.ethereum.send('eth_requestAccounts');   // trust wallet does not like that
+    // console.log("accountsFromMetaMask.result[0]", accountsFromMetaMask.result[0]);
+    // this.setState({ account: accountsFromMetaMask.result[0] });
+    // this.BuyPresaleElement.current.state.account = accountsFromMetaMask.result[0];
+    // this.StakeElement.current.state.account = accountsFromMetaMask.result[0];
+
+
+
+    var accountsFromMetaMask = await window.ethereum.request({ method: 'eth_requestAccounts' });   // trust wallet does not like that
+    console.log("accountsFromMetaMask[0]", accountsFromMetaMask[0]);
+    this.setState({ account: accountsFromMetaMask[0] });
+    this.BuyPresaleElement.current.state.account = accountsFromMetaMask[0];
+    this.StakeElement.current.state.account = accountsFromMetaMask[0];
+
+
+
 
     var contractOfORB = new this.state.web3.eth.Contract(abi, this.state.addressOfORBcontract);
     this.setState({ contractOfORB: contractOfORB });

@@ -17,8 +17,8 @@ class FAQ extends Component {
         super(props);
 
         this.state = {
-            contractAddress: '0x97a3A94D10C684437B538827316dA5816710Ea7d',       // CHANGEIT - Change the Address
-            selfAuditLink: 'https://www.youtube.com/watch?v=VXhgu2YtZko'       // CHANGEIT - Self Audit Link
+            contractAddress: '0x23103FE58009cE4F6870245b84031f4A56523b3f',       // CHANGEIT - Change the Address
+            selfAuditLink: 'https://www.youtube.com/watch?v=VXhgu2YtZko'  
         };
     }
 

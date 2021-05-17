@@ -9,8 +9,8 @@ console.log("called Buy PancakeSwap");
 
 const goToPancakeSwap = () => {
     // CHANGEIT - Need Address Here
-    // window.open("https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x97a3A94D10C684437B538827316dA5816710Ea7d");
-    window.open("https://app.uniswap.org/#/swap?outputCurrency=0x97a3A94D10C684437B538827316dA5816710Ea7d");
+    window.open("https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x23103FE58009cE4F6870245b84031f4A56523b3f");
+    // window.open("https://app.uniswap.org/#/swap?outputCurrency=0x0549D733e158bddEd14C07c57f245eA6e2728220");
 }
 
 class BuyPancakeSwap extends Component {
