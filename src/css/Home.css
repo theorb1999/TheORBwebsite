@@ -17,6 +17,7 @@
 .insideCardForHome {}
 
 .orbHomeHeadline {
+  padding-bottom: 10px;
   font-family: 'Monsterrat', sans-serif;
   color: #ffa500;
   font-size: 2.5vw;
@@ -35,6 +36,11 @@
 
 
 
+
+.stopTheClicksInDev{
+
+  pointer-events: none;
+}
 
 
 

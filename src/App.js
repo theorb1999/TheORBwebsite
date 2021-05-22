@@ -25,9 +25,9 @@ import { HashRouter as Router } from 'react-router-dom';
 import Home from './components/Home';
 // import Stars from './components/Stars';
 import FAQ from './components/FAQ';
-import Whitepaper from './components/Whitepaper';
-import BuyPresale from './components/BuyPresale';
-// import BuyPancakeSwap from './components/BuyPancakeSwap';   // CHANGEIT - comment or uncomment when needed
+// import Whitepaper from './components/Whitepaper';
+// import BuyPresale from './components/BuyPresale';
+import BuyPancakeSwap from './components/BuyPancakeSwap'; 
 import Stake from './components/Stake';
 import Team from './components/Team';
 import Socials from './components/Socials';
@@ -65,19 +65,22 @@ class App extends Component {
 
     }
 
-    this.BuyPresaleElement = React.createRef();
+    // this.BuyPresaleElement = React.createRef();
     this.StakeElement = React.createRef();
 
     this.itemsForTabMenu = [
       { label: 'Home', icon: 'pi pi-home', command: () => { window.location = "#home" } },
-      { label: 'FAQ', icon: 'pi pi-question-circle', command: () => { window.location = "#faq" } },
-      { label: 'Whitepaper', icon: 'pi pi-paperclip', command: () => { window.location = "#whitepaper" } },
+      { label: 'FAQ & Whitepaper', icon: 'pi pi-question-circle', command: () => { window.location = "#faq" } },
+      // { label: 'Whitepaper', icon: 'pi pi-paperclip', command: () => { window.location = "#whitepaper" } },
       { label: 'Buy', icon: 'pi pi-money-bill', command: () => { window.location = "#buy" } },
       { label: 'Stake and Farm', icon: 'pi pi-dollar', command: () => { window.location = "#stake" } },
       { label: 'The Team', icon: 'pi pi-id-card', command: () => { window.location = "#team" } },
       { label: 'Socials', icon: 'pi pi-discord', command: () => { window.location = "#socials" } },
       { label: 'Connect to The ORB', icon: 'pi pi-shield', command: () => { this.connectToORBclicked() } }
     ];
+
+
+    
 
 
     this.connectToORBclicked = this.connectToORBclicked.bind(this);
@@ -107,14 +110,14 @@ class App extends Component {
       // const web3 = new Web3(window.ethereum);
       const web3 = new Web3(provider);
       this.setState({ web3: web3 });
-      this.BuyPresaleElement.current.state.web3 = web3;
+      // this.BuyPresaleElement.current.state.web3 = web3;
       this.StakeElement.current.state.web3 = web3;
 
       const accountsFromWeb3Check = await web3.eth.getAccounts();
       if (accountsFromWeb3Check.length == '0') {
         console.log("User is not logged in to MetaMask");
         this.setState({ isAccountConnected: false });
-        this.BuyPresaleElement.current.state.isAccountConnected = false;
+        // this.BuyPresaleElement.current.state.isAccountConnected = false;
         this.StakeElement.current.state.isAccountConnected = false;
       }
       else {
@@ -144,7 +147,7 @@ class App extends Component {
     var accountsFromMetaMask = await window.ethereum.request({ method: 'eth_requestAccounts' });   // trust wallet does not like that
     console.log("accountsFromMetaMask[0]", accountsFromMetaMask[0]);
     this.setState({ account: accountsFromMetaMask[0] });
-    this.BuyPresaleElement.current.state.account = accountsFromMetaMask[0];
+    // this.BuyPresaleElement.current.state.account = accountsFromMetaMask[0];
     this.StakeElement.current.state.account = accountsFromMetaMask[0];
 
 
@@ -152,19 +155,19 @@ class App extends Component {
 
     var contractOfORB = new this.state.web3.eth.Contract(abi, this.state.addressOfORBcontract);
     this.setState({ contractOfORB: contractOfORB });
-    this.BuyPresaleElement.current.state.contractOfORB = contractOfORB;
+    // this.BuyPresaleElement.current.state.contractOfORB = contractOfORB;
     this.StakeElement.current.state.contractOfORB = contractOfORB;
 
     this.setState({ isAccountConnected: true });
-    this.BuyPresaleElement.current.state.isAccountConnected = true;
+    // this.BuyPresaleElement.current.state.isAccountConnected = true;
     this.StakeElement.current.state.isAccountConnected = true;
 
     // set the Web3 stuff
-    this.BuyPresaleElement.current.state.web3 = this.state.web3;
+    // this.BuyPresaleElement.current.state.web3 = this.state.web3;
     this.StakeElement.current.state.web3 = this.state.web3;
 
     // Call Presale Loading Functions
-    this.BuyPresaleElement.current.accountConnectedForPresale();
+    // this.BuyPresaleElement.current.accountConnectedForPresale();
 
     // Call Stake Loading Functions 
     this.StakeElement.current.checkIfStakingIsEnabled();
@@ -210,13 +213,13 @@ class App extends Component {
 
 
 
-          <Whitepaper />
+          {/* <Whitepaper /> */}
 
 
 
-          <BuyPresale ref={this.BuyPresaleElement} />
+          {/* <BuyPresale ref={this.BuyPresaleElement} /> */}
 
-          {/* <BuyPancakeSwap /> */}
+          <BuyPancakeSwap />
 
 
 

@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import '../css/Home.css';
+import YoutubeEmbed from "./YoutubeEmbed";
 // import logoImg from './images/theORBlogo.png';
 // import { Card } from 'primereact/card';
 
 console.log("called Home");
+
+
+
+
 
 
 
@@ -17,11 +22,15 @@ class Home extends Component {
 
                 <div className="spacerForHomesection"></div>
 
+                
+
                 <div className="insideCardForHome">
 
                     <div className="orbHomeHeadline">
                         WELCOME TO THE ORB
                     </div>
+
+                    <YoutubeEmbed embedId="-JXQapaL6ss" />
 
                     <div className="orbHomeText">
 
@@ -42,10 +51,6 @@ class Home extends Component {
                             <div class="sentence">
                                 This is the first of it's kind. A rug-proof high-stakes crypto game.
                             </div>
-
-
-
-
 
                         </p>
 

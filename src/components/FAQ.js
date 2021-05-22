@@ -36,7 +36,7 @@ class FAQ extends Component {
                     <br />THE GAME CARRIES A HUGE POTENTIAL FOR REWARDS WITH AN EQUAL AMOUNT OF RISK.
                     <br />PLEASE INVEST WISELY AND NEVER MORE THAN YOU CAN AFFORD TO LOSE.
                     <br />THE TEAM HAS NO RELATION TO THE PREVIOUS ORB PROJECTS.
-                    <br />THE SELF-AUDIT WILL BE POSTED ON YOUTUBE FOR ALL TO WATCH.
+                    <br />THE SELF-AUDIT IS POSTED ON YOUTUBE FOR ALL TO WATCH.
                 </div>
 
                 <a href="https://www.youtube.com/watch?v=q0UXURCY-ZY" class="faq-overview" target="_blank" rel="noopener noreferrer">Watch the Overview on Youtube!</a>
